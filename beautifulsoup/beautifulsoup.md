@@ -4,9 +4,9 @@
 2.  [requests]() ==> 負責抓取檔案
 3.  [beautifulsoup](https://web.archive.org/web/20170127002045/https://www.crummy.com/software/BeautifulSoup/bs4/doc/) ==> 負責分析requests抓下來的檔案
 ## 安裝
-'''
+```
 pip install beautifulsoup
-'''
+```
 
 '''
 pip install requests
