@@ -8,9 +8,9 @@
 pip install beautifulsoup
 ```
 
-'''
+```
 pip install requests
-'''
+```
 ## 實作
 #### 抓取網站內容
 以gooele為例
@@ -19,7 +19,7 @@ request.get() ==> download the web's html
 
 BeautifulSoup(news.text,'html.parser') ==> analysis the html code,and build the object
 
-'''
+```
 from bs4 import BeautifulSoup
 import requests
 news=requests.get('https://www.google.com/')
@@ -27,9 +27,9 @@ soup=BeautifulSoup(news.text,'html.parser')
 
 #output the html content
 print(soup.prettify())
-'''
+```
 #### 抓取網站內容結果
-'''
+```
 <!DOCTYPE html>
 <html itemscope="" itemtype="http://schema.org/WebPage" lang="zh-TW">
  <head>
@@ -227,4 +227,4 @@ rgba(0,0,0,0.08)\x22,\x22sbpl\x22:16,\x22sbpr\x22:16,\x22scd\x22:10,\x22stok\x22
   </script>
  </body>
 </html>
-'''
+```
