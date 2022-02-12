@@ -24,8 +24,6 @@ from bs4 import BeautifulSoup
 import requests
 news=requests.get('https://www.google.com/')
 soup=BeautifulSoup(news.text,'html.parser')
-
-#output the html content
 print(soup.prettify())
 ```
 #### 抓取網站內容結果(省略版)
