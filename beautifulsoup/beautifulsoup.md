@@ -1,6 +1,6 @@
 # 爬蟲練習-BeautifulSoup用法
 ## 工具
-1.  python3.8
+1.  - [x]python3.8
 2.  [requests]() ==> 負責抓取檔案
 3.  [beautifulsoup](https://web.archive.org/web/20170127002045/https://www.crummy.com/software/BeautifulSoup/bs4/doc/) ==> 負責分析requests抓下來的檔案
 ## 安裝
@@ -104,7 +104,7 @@ print(soup.prettify())# 輸出排版後的 HTML 程式碼
  a=soup.find('a')
  print(a) 
  ```
-*抓取結果：*
+抓取結果：
  ```
  <a class="gb1" href="https://www.google.com.tw/imghp?hl=zh-TW&amp;tab=wi">圖片</a>
  ```
