@@ -1,6 +1,6 @@
 # 爬蟲練習-BeautifulSoup用法
 ## 工具
-1.  - [x] python3.8
+1.  python3.8
 2.  [requests]() ==> 負責抓取檔案
 3.  [beautifulsoup](https://web.archive.org/web/20170127002045/https://www.crummy.com/software/BeautifulSoup/bs4/doc/) ==> 負責分析requests抓下來的檔案
 ## 安裝
