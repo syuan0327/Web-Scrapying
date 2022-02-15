@@ -72,3 +72,27 @@ print(soup.prettify())
      </a>
 
 ```
+#### 抓取標籤內的內容
+可以使用 `soup.標籤名`
+1. 以title為例，原本該行的html程式碼為：<title>Google</title>
+
+我們可以使用以下的程式碼
+```
+print(soup.title)
+```
+抓取title標籤結果
+```
+<title>Google</title>
+```
+如果想要只顯示title標籤內(Google)的字可以將程式改成以下(加上.string)
+```
+print(soup.title.string)
+```
+2. 同理，如果是想抓取a標籤當中的內容我們可以打 `soup.a`
+```
+print(soup.a)
+```
+
+
+
+
