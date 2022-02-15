@@ -112,8 +112,17 @@ print(soup.prettify())# 輸出排版後的 HTML 程式碼
  ```
  <a class="gb1" href="https://www.google.com.tw/imghp?hl=zh-TW&amp;tab=wi">圖片</a>
  ```
- 
-### 搜尋多個節點(可限制搜尋數量)
+### 提取節點屬性(get)
+把 href裡面的內容印出來
+```python
+a=soup.find('a')
+print(a.get('href'))
+``` 
+所以這邊會把`href`後面的結果印出來：
+```
+https://www.google.com.tw/imghp?hl=zh-TW&tab=wi
+```
+### 搜尋多個節點(find_all)
  
 我們可以從抓取結果看到，以上兩中方法 `soup.標籤名`和 `soup.find('標籤名')`都只能抓取該頁面出現的第一筆，那我們該如何抓取很多筆資料呢?
 ##### 1. 找尋所有符合搜尋節點的資料
@@ -165,8 +174,15 @@ results=soup.find_all('a',class_='gb1',limit=3)
 for result in results:
     print(result)
 ```
-
-
-
-
+##### 4. 找尋多個標籤
+```python
+results=soup.find_all(['a','b'],limit=2)
+for result in results:
+    print(result)
+```
+##### 結果：
+```
+<b class="gb1">搜尋</b>
+<a class="gb1" href="https://www.google.com.tw/imghp?hl=zh-TW&amp;tab=wi">圖片</a>
+```
 
