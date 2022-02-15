@@ -76,7 +76,6 @@ print(soup.prettify())# 輸出排版後的 HTML 程式碼
 一、 可以使用 `soup.標籤名`：
 
  1. 以title為例，原本該行的html程式碼為：<title>Google</title>
-
  我們可以使用以下的程式碼：
   ```
   print(soup.title)
