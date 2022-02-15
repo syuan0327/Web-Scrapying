@@ -19,7 +19,7 @@ request.get() ==> download the web's html
 
 BeautifulSoup(news.text,'html.parser') ==> analysis the html code,and build the object
 
-```
+```python
 from bs4 import BeautifulSoup
 import requests
 news=requests.get('https://www.google.com/')
@@ -27,7 +27,7 @@ soup=BeautifulSoup(news.text,'html.parser')
 print(soup.prettify())# 輸出排版後的 HTML 程式碼
 ```
 抓取網站內容結果(省略版)：
-```
+```html
 <!DOCTYPE html>
 <html itemscope="" itemtype="http://schema.org/WebPage" lang="zh-TW">
  <head>
@@ -85,11 +85,11 @@ print(soup.prettify())# 輸出排版後的 HTML 程式碼
   <title>Google</title>
   ```
  如果想要只顯示title標籤內(Google)的字可以將程式改成以下(加上.string)：
-  ```
+  ```python
   print(soup.title.string)
   ```
  2.同理，如果是想抓取a標籤當中的內容我們可以打 `soup.a`：
-  ```
+  ```python
   print(soup.a)
   ```
  抓取結果：
@@ -100,7 +100,7 @@ print(soup.prettify())# 輸出排版後的 HTML 程式碼
 二、 除了以上方法，我們也可以使用 `soup.find('標籤名')`：
 
 1.以`<a>`為例：
- ```
+ ```python
  a=soup.find('a')
  print(a) 
  ```
@@ -114,7 +114,7 @@ print(soup.prettify())# 輸出排版後的 HTML 程式碼
 我們可以從抓取結果看到，以上兩中方法 `soup.標籤名`和 `soup.find('標籤名')`都只能抓取該頁面出現的第一筆，那我們該如何抓取很多筆資料呢?
 
 可以使`find_all('標籤名')`列出所有該搜尋標籤名的所有資料，在使用迴圈將每筆資料列出：
- ```
+ ```python
  results=soup.find_all('a')
  for result in results:
     print(result)
@@ -136,7 +136,7 @@ print(soup.prettify())# 輸出排版後的 HTML 程式碼
 ...以下省略
 ```
 如果是想要搜尋節點中的class屬性，可以使用以下用法，比較需要注意的是 `class`需要打成 `class_`
-```
+```python
 results=soup.find_all('a',class_='gb1')
 for result in results:
     print(result)
@@ -154,7 +154,7 @@ for result in results:
 <a class="gb1" href="https://www.google.com.tw/intl/zh-TW/about/products?tab=wh" style="text-decoration:none"><u>更多</u> »</a>
 ```
 此外我們可以使用`limit`來限制結果抓取數量，結果因篇幅關係就不貼在這了，有興趣可以試試看。：
-```
+```python
 results=soup.find_all('a',class_='gb1',limit=3)
 for result in results:
     print(result)
