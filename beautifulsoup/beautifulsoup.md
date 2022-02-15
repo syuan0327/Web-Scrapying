@@ -104,7 +104,7 @@ print(soup.prettify())# 輸出排版後的 HTML 程式碼
  a=soup.find('a')
  print(a) 
  ```
-抓取結果：
+*抓取結果：*
  ```
  <a class="gb1" href="https://www.google.com.tw/imghp?hl=zh-TW&amp;tab=wi">圖片</a>
  ```
