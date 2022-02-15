@@ -75,7 +75,7 @@ print(soup.prettify())# 輸出排版後的 HTML 程式碼
 #### 抓取標籤內的內容(抓取標籤節點)
 一、 可以使用 `soup.標籤名`：
 
- 1. 以title為例，原本該行的html程式碼為：<title>Google</title>
+ 1.以title為例，原本該行的html程式碼為：<title>Google</title>
  我們可以使用以下的程式碼：
   ```
   print(soup.title)
@@ -88,7 +88,7 @@ print(soup.prettify())# 輸出排版後的 HTML 程式碼
   ```
   print(soup.title.string)
   ```
- 2. 同理，如果是想抓取a標籤當中的內容我們可以打 `soup.a`：
+ 2.同理，如果是想抓取a標籤當中的內容我們可以打 `soup.a`：
   ```
   print(soup.a)
   ```
@@ -99,7 +99,7 @@ print(soup.prettify())# 輸出排版後的 HTML 程式碼
 
 二、 除了以上方法，我們也可以使用 `soup.find('標籤名')`：
 
-1. 以`<a>`為例：
+1.以`<a>`為例：
  ```
  a=soup.find('a')
  print(a) 
