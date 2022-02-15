@@ -113,11 +113,45 @@ print(soup.prettify())# 輸出排版後的 HTML 程式碼
  
 我們可以從抓取結果看到，以上兩中方法 `soup.標籤名`和 `soup.find('標籤名')`都只能抓取該頁面出現的第一筆，那我們該如何抓取很多筆資料呢?
 
-可以使`find_all('標籤名')`：
+可以使`find_all('標籤名')`列出所有該搜尋標籤名的所有資料，在使用迴圈將每筆資料列出：
  ```
- 
+ results=soup.find_all('a')
+ for result in results:
+    print(result)
+    print('\n')
  ```
- 
+結果：
+```
+<a class="gb1" href="https://www.google.com.tw/imghp?hl=zh-TW&amp;tab=wi">圖片</a>
+<a class="gb1" href="https://maps.google.com.tw/maps?hl=zh-TW&amp;tab=wl">地圖</a>
+<a class="gb1" href="https://play.google.com/?hl=zh-TW&amp;tab=w8">Play</a>
+<a class="gb1" href="https://www.youtube.com/?gl=TW&amp;tab=w1">YouTube</a>
+<a class="gb1" href="https://news.google.com/?tab=wn">新聞</a>
+<a class="gb1" href="https://mail.google.com/mail/?tab=wm">Gmail</a>
+<a class="gb1" href="https://drive.google.com/?tab=wo">雲端硬碟</a>
+<a class="gb1" href="https://www.google.com.tw/intl/zh-TW/about/products?tab=wh" style="text-decoration:none"><u>更多</u> »</a>
+<a class="gb4" href="http://www.google.com.tw/history/optout?hl=zh-TW">網頁記錄</a>
+<a class="gb4" href="/preferences?hl=zh-TW">設定</a>
+<a class="gb4" href="https://accounts.google.com/ServiceLogin?hl=zh-
+...以下省略
+```
+如果是想要搜尋節點中的class屬性，可以使用以下用法，比較需要注意的是 `class`需要打成 `class_`
+```
+results=soup.find_all('a',class_='gb1')
+for result in results:
+    print(result)
+```
+結果就是會跑出a標籤當中class為gb1的所有選項：
+```
+<a class="gb1" href="https://www.google.com.tw/imghp?hl=zh-TW&amp;tab=wi">圖片</a>
+<a class="gb1" href="https://maps.google.com.tw/maps?hl=zh-TW&amp;tab=wl">地圖</a>
+<a class="gb1" href="https://play.google.com/?hl=zh-TW&amp;tab=w8">Play</a>
+<a class="gb1" href="https://www.youtube.com/?gl=TW&amp;tab=w1">YouTube</a>
+<a class="gb1" href="https://news.google.com/?tab=wn">新聞</a>
+<a class="gb1" href="https://mail.google.com/mail/?tab=wm">Gmail</a>
+<a class="gb1" href="https://drive.google.com/?tab=wo">雲端硬碟</a>
+<a class="gb1" href="https://www.google.com.tw/intl/zh-TW/about/products?tab=wh" style="text-decoration:none"><u>更多</u> »</a>
+```
 
 
 
