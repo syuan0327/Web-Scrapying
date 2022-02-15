@@ -141,7 +141,7 @@ results=soup.find_all('a',class_='gb1')
 for result in results:
     print(result)
 ```
-結果就是會跑出a標籤當中class為gb1的所有選項：
+結果就是會跑出`a`標籤當中`class`為`gb1`的所有選項：
 ```
 <a class="gb1" href="https://www.google.com.tw/imghp?hl=zh-TW&amp;tab=wi">圖片</a>
 <a class="gb1" href="https://maps.google.com.tw/maps?hl=zh-TW&amp;tab=wl">地圖</a>
