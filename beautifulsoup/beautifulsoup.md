@@ -77,7 +77,7 @@ print(soup.prettify())# 輸出排版後的 HTML 程式碼
 
  1.以title為例，原本該行的html程式碼為：<title>Google</title>
  我們可以使用以下的程式碼：
-  ```
+  ```python
   print(soup.title)
   ```
  抓取title標籤的結果：
@@ -141,7 +141,8 @@ results=soup.find_all('a',class_='gb1')
 for result in results:
     print(result)
 ```
-結果就是會跑出`a`標籤當中`class`為`gb1`的所有選項：
+結果就是會跑出`a`節點標籤當中`class`屬性為`gb1`的所有選項：
+
 ```
 <a class="gb1" href="https://www.google.com.tw/imghp?hl=zh-TW&amp;tab=wi">圖片</a>
 <a class="gb1" href="https://maps.google.com.tw/maps?hl=zh-TW&amp;tab=wl">地圖</a>
@@ -152,6 +153,13 @@ for result in results:
 <a class="gb1" href="https://drive.google.com/?tab=wo">雲端硬碟</a>
 <a class="gb1" href="https://www.google.com.tw/intl/zh-TW/about/products?tab=wh" style="text-decoration:none"><u>更多</u> »</a>
 ```
+此外我們可以使用`limit`來限制結果抓取數量，結果因篇幅關係就不貼在這了，有興趣可以試試看。：
+```
+results=soup.find_all('a',class_='gb1',limit=3)
+for result in results:
+    print(result)
+```
+
 
 
 
